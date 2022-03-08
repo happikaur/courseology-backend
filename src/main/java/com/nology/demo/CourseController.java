@@ -21,7 +21,7 @@ public class CourseController {
     @PostMapping("/course")
     public ResponseEntity<String> createCourse(@RequestBody Course course){
         repository.save(course);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Success, course has been added");
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body("Success, course has been added");
     }
 
     @GetMapping("/courses")

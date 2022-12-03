@@ -29,12 +29,12 @@ public class CourseController {
         return ResponseEntity.status(HttpStatus.OK).body(repository.findAll());
     }
 
-    @GetMapping("/greeting/{id}")
+    @GetMapping("/courses/{id}")
     public ResponseEntity<Course> getGreetingById(@PathVariable String id) {
         return ResponseEntity.status(HttpStatus.OK).body(repository.findById(Integer.parseInt(id)));
     }
 
-    @DeleteMapping("/course/{id}")
+    @DeleteMapping("/courses/{id}")
     @Transactional
     public ResponseEntity<String> deleteCourse(@PathVariable String id) {
         repository.deleteById(Integer.parseInt(id));
